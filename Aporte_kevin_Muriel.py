@@ -1,6 +1,7 @@
 #Aporte kevin Muriel
 # SEGUNDA PARTE: GESTION DE SERVICIOS
-
+from abc import abstractmethod
+from clientes import EntidadGeneral
 # Clase abstracta Servicio
 class Servicio(EntidadGeneral):
 

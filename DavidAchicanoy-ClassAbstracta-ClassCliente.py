@@ -81,6 +81,9 @@ class Cliente(EntidadGeneral): # declara Cliente como clase hija hereda de Entid
     @staticmethod # esatablece metodo indpendiente.
     def validar_documento(numero_documento): #define validar documento, recibe el numero de documento como parametro
 
+        if not isinstance(numero_documento, str): # verifica que el numero de documento sea una cadena de texto
+            raise TypeError("Atencion. El documento debe ser una cadena de texto.") # lanza error si no es una cadena de texto
+
         numero_documento = numero_documento.strip() # elimina espacios al inicio y final
 
         if not 5 <= len(numero_documento) <= 20: # valida longitud entre 5 y 20 caracteres
@@ -134,6 +137,6 @@ class Cliente(EntidadGeneral): # declara Cliente como clase hija hereda de Entid
             print(cliente.describir())  # Muestra la descripción del cliente creado
         finally:
             print("Validacion Finalizada") # se ejecuta siempre, haya ocurrido o no una excepción, para indicar que la validación ha finalizado.
- 
-Cliente.crear_cliente() # Llama a la función para crear un cliente y manejar excepciones.            
+if __name__ == "__main__": #  verifica si el script se está ejecutando directamente y no importado como módulo.
+    Cliente.crear_cliente() # Llama a la función para crear un cliente y manejar excepciones.            
 #------------------ fin de  commit-----------------------------#

@@ -5,6 +5,14 @@
 import logging
 import os
 from datetime import datetime
+from clientes import EntidadGeneral, Cliente
+
+from servicios import (
+    Servicio,
+    ReservaSala,
+    AlquilerEquipo,
+    AsesoriaEspecializada
+)
 
 # 1. CONFIGURACION DEL ARCHIVO DE REGISTROS (LOGS)
 
@@ -493,7 +501,7 @@ def ejecutar_demo():
             "CLI-003",
             "Laura Diaz",
             "laura@gmail.com",
-            12345
+            "12345"
         )
 
     except (TypeError, ValueError) as error:
